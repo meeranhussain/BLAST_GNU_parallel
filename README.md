@@ -65,5 +65,5 @@ python split_fasta_by_contigs.py input.fasta query_chunk 30
 ls query_chunk* | parallel "blastn -query {} -task megablast -db nt -outfmt '6 qseqid staxids bitscore std sscinames sskingdoms stitle' -culling_limit 10 -num_threads 8 -evalue 1e-3 -out {.}.out"
 
 ##Merge
-cat query_chunk_*.out > combined_results.out
+cat query_chunk_*.out > blast_combined_results.out
 ```
